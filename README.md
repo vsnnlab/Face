@@ -17,7 +17,7 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 - Download "Dataset_subset1.zip"~"Dataset_subset6.zip" and merge in a file named as 'Dataset' in the same directory 
 
 ( Dataset is the stimulus included in the fLoc functional localizer package (Stigliani et al., 2015)  
-  Dataset_view is the imageset referred from Gourier et al., 2004 )
+   Dataset_view is the imageset referred from Gourier et al., 2004 )
   
 ### 3. Instructions for demo
 - Run "Run.mlapp" and select figure numbers (from 1 to 4) that you want to perform a demo simulation.
