@@ -1,5 +1,6 @@
 Demo codes for
 'Spontaneous generation of face recognition in untrained deep neural networks"
+
 Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 *Contact: sbpaik@kaist.ac.kr
