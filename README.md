@@ -1,16 +1,16 @@
 ### Demo codes for
-### 'Spontaneous generation of face selectivity in untrained deep neural networks" </br>
+### 'Face Detection in Untrained Deep Neural Networks" </br>
 
 Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 *Contact: sbpaik@kaist.ac.kr
 
 ### 1. System requirements
-- MATLAB 2018b or later version
+- MATLAB 2019b or later version
 - Installation of the Deep Learning Toolbox (https://www.mathworks.com/products/deep-learning.html)
 - Installation of the pretrained AlexNet (https://de.mathworks.com/matlabcentral/fileexchange/59133-deep-learning-toolbox-model-for-alexnet-network)
 - No non-standard hardware is required.
-- Uploaded codes were tested using MATLAB 2018b and 2019b.
+- Uploaded codes were tested using MATLAB 2019b.
 
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
