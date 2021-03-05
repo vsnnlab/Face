@@ -14,7 +14,17 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
-  
+- Expected Installation time is about 2 minutes, but may vary by system conditions.
+-   
 ### 3. Instructions for demo
 - Run "Main.m" and select figure numbers (from 1 to 6) that you want to perform a demo simulation.
 - Expected running time is about 5 minutes for each figure, but may vary by system conditions.
+
+### 4. Expected output for demo
+- Below results for untrained AlexNet will be shown.
+  1) Spontaneous emergence of face-selectivity in untrained networks (Figure 1b-g)
+  2) Preferred feature images of face-selective units in untrained networks (Figure 2b,d) 
+  3) Detection of face images using the response of face units in untrained networks (Figure 3b-d) 
+  4) Invariant characteristics of face-selective units in untrained networks  (Figure 4a-f) 
+  5) Invariant characteristics of face-selective units in untrained networks  (Figure 5a,f-h) 
+  6) Effect of training on face-selectivity in untrained networks  (Figure 6b-f) 
