@@ -15,7 +15,7 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
 - Expected Installation time is about 2 minutes, but may vary by system conditions.
--   
+ 
 ### 3. Instructions for demo
 - Run "Main.m" and select figure numbers (from 1 to 6) that you want to perform a demo simulation.
 - Expected running time is about 5 minutes for each figure, but may vary by system conditions.
