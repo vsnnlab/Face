@@ -14,7 +14,12 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
-- Expected Installation time is about 2 minutes, but may vary by system conditions.
+- Download 'AlexNet_2018b.mat', 'PretrainedNet.zip', 'Stimulus.zip' from following
+     AlexNet_2018b.mat : https://drive.google.com/file/d/1t1eaHaVttd_Y1dDcuph9F8N9s7OwdUvC/view?usp=sharing
+     PretrainedNet.zip : https://drive.google.com/file/d/1qBl-2QsOHb1VMd20NYmPm_jWx4i2Cwul/view?usp=sharing
+     Stimulus.zip : https://drive.google.com/file/d/16vFQsDF2Cl6nwDuHzR7ZRFIzcQFqnRrd/view?usp=sharing
+  and unzip those files in the same directory
+- Expected Installation time is about 45 minutes, but may vary by system conditions.
  
 ### 3. Instructions for demo
 - Run "Main.m" and select figure numbers (from 1 to 6) that you want to perform a demo simulation.
