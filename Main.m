@@ -150,7 +150,7 @@ tic
 % Decide the simulation type (SimER)
 % 0 : Fast version of invariance analysis. Results for training effect without invariance analysis would be displayed.
 % 1 : All Results for training effect including invariance anaylsis would be displayed. It takes around 30 minutes.
-SimER = 1;
+SimER = 0;
 Figure6;
 toc
 end
