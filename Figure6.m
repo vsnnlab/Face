@@ -12,10 +12,8 @@ num_minTotal = 100;                                                        % num
 Cell_Idx_trained = cell(NN_type,NN_trained);
 Cell_FSI_trained = cell(NN_type,NN_trained);
 Cell_SVM_trained = cell(NN_type,NN_trained);
-Cell_ER_trained = cell(NN_type,NN_trained,3);
-Cell_var_axis = cell(3,1);
 
-%% Training effect of face-units (Fig 6b-f)
+%% Training effect of face-units (Fig 6b-d)
 for nn = 1:NN_trained
     tic
     disp(['Trial',num2str(nn),' - Net',num2str(orderNetdesceding(nn))])
@@ -63,44 +61,6 @@ for nn = 1:NN_trained
             [array_SVM(rr),~] = fun_SVM(net_rand,num_cell,cell_idx,IMG_cell,idx_mat,layersSet,length(layerArray),num_minTotal);
         end
         Cell_SVM_trained{tt,nn} = array_SVM;
-        
-        %% Measure effective range of invariance 
-        if SimER == 1
-            for vtype = 1:3
-                switch vtype
-                    case 1
-                        disp('Position')
-                        load('IMG_var_pos_201201.mat'); IMG_var = single(IMG_pos); clearvars IMG_pos
-                        var_idx = pos_idx; clearvars pos_idx
-                        RF_size = 163/2;
-                        var_axis = (-120:20:120)/RF_size;
-                    case 2
-                        disp('Size')
-                        load('IMG_var_size_201201.mat'); IMG_var = single(IMG_size); clearvars IMG_size
-                        var_idx = size_idx; clearvars size_idx
-                        RF_size = 163;
-                        var_axis = (41:25:341)/RF_size*100;
-                    case 3
-                        disp('Rotation')
-                        load('IMG_var_rot_201201.mat'); IMG_var = single(IMG_rot); clearvars IMG_rot
-                        var_idx = rot_idx; clearvars rot_idx
-                        RF_size = 1;
-                        var_axis = -180:30:180;
-                end
-                Cell_var_axis{vtype} = var_axis;
-                
-                % Measure network response
-                act_rand = activations(net_rand,IMG_var,layersSet{layerArray(length(layerArray))});
-                act_re = reshape(act_rand,num_cell,size(IMG_var,4));
-                act_face = act_re(cell_idx,:);
-                num_face_cell = size(cell_idx,1);
-                clearvars act_rand act_re
-                
-                % Measure effective range
-                [resp_z_mat,face_resp_z_mat,max_resp_z_mat,ER_single_mat] = fun_EffectRange_Resp(act_face,num_face_cell,cls_idx,var_idx);
-                Cell_ER_trained{tt,nn,vtype} = ER_single_mat;
-            end
-        end
     end
     toc
 end
@@ -109,25 +69,18 @@ clearvars IMG_cell idx_mat
 array_num = zeros(NN_trained,NN_type);
 array_fsi = zeros(NN_trained,NN_type); 
 array_svm = zeros(NN_trained,NN_type); 
-array_er = zeros(NN_trained,NN_type,3); 
 
 for nn = 1:NN_trained
     for tt = 1:NN_type
         array_num(nn,tt) = length(Cell_Idx_trained{tt,nn});
         array_fsi(nn,tt) = nanmean(Cell_FSI_trained{tt,nn});
         array_svm(nn,tt) = mean(Cell_SVM_trained{tt,nn});
-        for vv = 1:3
-            array_er(nn,tt,vv) = mean(Cell_ER_trained{tt,nn});
-        end
     end
 end
 
-arrayYlim = [3, 300, 400];
-StrYlabel = {'Effective range (r_R_F)','Effective range (%)','Effective range (deg)'};
-
 if SimER == 0
     figure('units','normalized','outerposition',[0 0.5 1 0.5]); drawnow
-    sgtitle('Figure 6 : Effect of training on face-selectivity in untrained networks (Fig 6b-f)')
+    sgtitle('Figure 6 : Effect of training on face-selectivity in untrained networks (Fig 6b-d)')
     subplot(2,6,[1,2,7,8])
     boxplot([array_fsi(:,1),array_fsi(:,2),array_fsi(:,3),array_fsi(:,4)])
     xticks([1:4]); ylim([0.3 0.5])
@@ -142,51 +95,4 @@ if SimER == 0
     boxplot([array_svm(:,1),array_svm(:,2),array_svm(:,3),array_svm(:,4)])
     xticks([1:4]); ylim([0.85 1.05])
     xticklabels({'Untrained','Face-deprived','Original','Face'}); ylabel('Correct ratio');
-else
-    figure('units','normalized','outerposition',[0 0 1 1]); drawnow
-    sgtitle('Figure 6 : Effect of training on face-selectivity in untrained networks (Fig 6b-f)')
-    subplot(4,6,[1,2,7,8])
-    boxplot([array_fsi(:,1),array_fsi(:,2),array_fsi(:,3),array_fsi(:,4)])
-    xticks([1:4]); ylim([0.3 0.5])
-    xticklabels({'Untrained','Face-deprived','Original','Face'}); ylabel('Face-selectivity index');
-    
-    subplot(4,6,[3,4,9,10])
-    boxplot([array_num(:,1),array_num(:,2),array_num(:,3),array_num(:,4)])
-    xticks([1:4]); ylim([100 600])
-    xticklabels({'Untrained','Face-deprived','Original','Face'}); ylabel('Number of face units');
-    
-    subplot(4,6,[5,6,11,12])
-    boxplot([array_svm(:,1),array_svm(:,2),array_svm(:,3),array_svm(:,4)])
-    xticks([1:4]); ylim([0.85 1.05])
-    xticklabels({'Untrained','Face-deprived','Original','Face'}); ylabel('Correct ratio');
-    
-    subplot(4,6,[13,14,19,20]); hold on; vtype = 1;
-    tmpScale = Cell_var_axis{vtype}(end)-Cell_var_axis{vtype}(end-1);
-    bar([1],mean(tmpScale.*array_er(:,1,vtype),1),0.5,'facecolor',[0 0 0])
-    errorbar([1],mean(tmpScale.*array_er(:,1,vtype),1),std(tmpScale.*array_er(:,1,vtype),1),'k')
-    bar([2],mean(tmpScale.*array_er(:,4,vtype),1),0.5,'facecolor',[0 0 1])
-    errorbar([2],mean(tmpScale.*array_er(:,4,vtype),1),std(tmpScale.*array_er(:,4,vtype),1),'k')
-    xticks([1:2]); xlim([0.5 2.5]); ylim([0 arrayYlim(vtype)])
-    xticklabels({'Untrained','Trained-Face'});  ylabel(StrYlabel{vtype});
-    title('Effect range of invariance - Translation (Fig 6f)')
-    
-    subplot(4,6,[15,16,21,22]); hold on; vtype = 2;
-    tmpScale = Cell_var_axis{vtype}(end)-Cell_var_axis{vtype}(end-1);
-    bar([1],mean(tmpScale.*array_er(:,1,vtype),1),0.5,'facecolor',[0 0 0])
-    errorbar([1],mean(tmpScale.*array_er(:,1,vtype),1),std(tmpScale.*array_er(:,1,vtype),1),'k')
-    bar([2],mean(tmpScale.*array_er(:,4,vtype),1),0.5,'facecolor',[0 0 1])
-    errorbar([2],mean(tmpScale.*array_er(:,4,vtype),1),std(tmpScale.*array_er(:,4,vtype),1),'k')
-    xticks([1:2]); xlim([0.5 2.5]); ylim([0 arrayYlim(vtype)])
-    xticklabels({'Untrained','Trained-Face'});  ylabel(StrYlabel{vtype});
-    title('Effect range of invariance - Scaling (Fig 6f)')
-    
-    subplot(4,6,[17,18,23,24]); hold on; vtype = 3;
-    tmpScale = Cell_var_axis{vtype}(end)-Cell_var_axis{vtype}(end-1);
-    bar([1],mean(tmpScale.*array_er(:,1,vtype),1),0.5,'facecolor',[0 0 0])
-    errorbar([1],mean(tmpScale.*array_er(:,1,vtype),1),std(tmpScale.*array_er(:,1,vtype),1),'k')
-    bar([2],mean(tmpScale.*array_er(:,4,vtype),1),0.5,'facecolor',[0 0 1])
-    errorbar([2],mean(tmpScale.*array_er(:,4,vtype),1),std(tmpScale.*array_er(:,4,vtype),1),'k')
-    xticks([1:2]); xlim([0.5 2.5]); ylim([0 arrayYlim(vtype)])
-    xticklabels({'Untrained','Trained-Face'});  ylabel(StrYlabel{vtype});
-    title('Effect range of invariance - Rotation (Fig 6f)')
 end
