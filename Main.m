@@ -147,7 +147,7 @@ if fig6 == 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Figure 6 : Effect of training on face-selectivity in untrained networks
 disp('Figure 6 ... (~ 5 min)')
 tic
-% 0 : Fast version of invariance analysis. Results for training effect without invariance analysis would be displayed.
+% 0 : Fast version of analysis for training effect (Number of networks = 3, in manuscript N = 100)
 SimER = 0;
 Figure6;
 toc
