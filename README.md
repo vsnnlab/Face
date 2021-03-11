@@ -31,4 +31,4 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
   3) Detection of face images using the response of face units in untrained networks (Figure 3b-d) 
   4) Invariant characteristics of face-selective units in untrained networks  (Figure 4a-f) 
   5) Invariant characteristics of face-selective units in untrained networks  (Figure 5a,f-h) 
-  6) Effect of training on face-selectivity in untrained networks  (Figure 6b-f) 
+  6) Effect of training on face-selectivity in untrained networks  (Figure 6b-d) 
