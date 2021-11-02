@@ -59,7 +59,7 @@ idxClass = 1;                                                              % ind
 %% Step 1. Loading pretrained Alexnet and image dataset
 disp(['Load imageset and networks ... (~ 10 sec)'])
 tic
-load('AlexNet_2018b.mat')                                                  % pretained AlexNet
+net = alexnet;                                                             % pretained AlexNet
 load('IMG_cntr_210521.mat','IMG')                                          % object stimulus
 
 toc
