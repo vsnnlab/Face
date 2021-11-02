@@ -14,8 +14,8 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
-- Download 'AlexNet_2018b.mat', 'Data.zip', 'Stimulus.zip' from below link and unzip files in the same directory
- [Data URL] : 
+- Download 'AlexNet_2018b.mat' (or pretrained AlexNet provided by MATLAB), 'Data.zip', 'Stimulus.zip' from below link and unzip files in the same directory
+- [Data URL] : 
 - Expected Installation time is about 45 minutes, but may vary by system conditions.
  
 ### 3. Instructions for demo
