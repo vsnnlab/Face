@@ -8,11 +8,9 @@
 % Prerequirement 
 % 1) MATLAB 2019b or later version is recommended.
 % 2) Install deeplearning toolbox. 
-% 3) Please download 'AlexNet_2018b.mat', 'PretrainedNet.zip', 'Stimulus.zip' from following
+% 3) Please download 'AlexNet_2018b.mat' (or pretrained AlexNet provided by MATLAB), 'Data.zip', 'Stimulus.zip'  from below link
 %
-%      - AlexNet_2018b.mat : https://drive.google.com/file/d/1t1eaHaVttd_Y1dDcuph9F8N9s7OwdUvC/view?usp=sharing
-%      - PretrainedNet.zip : https://drive.google.com/file/d/1qBl-2QsOHb1VMd20NYmPm_jWx4i2Cwul/view?usp=sharing
-%      - Stimulus.zip : https://drive.google.com/file/d/16vFQsDF2Cl6nwDuHzR7ZRFIzcQFqnRrd/view?usp=sharing
+%      - [Data URL] : 
 %
 %    and unzip these files in the same directory
 
