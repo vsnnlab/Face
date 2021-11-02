@@ -10,7 +10,7 @@
 % 2) Install deeplearning toolbox. 
 % 3) Please download 'Data.zip', 'Stimulus.zip'  from below link
 %
-%      - [Data URL] : 
+%      - [Data URL] : https://doi.org/10.5281/zenodo.5637812
 %
 %    and unzip these files in the same directory
 
