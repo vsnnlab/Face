@@ -15,7 +15,7 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
 - Download 'Data.zip', 'Stimulus.zip' from below link and unzip files in the same directory
-- [Data URL] : 
+- [Data URL] : https://doi.org/10.5281/zenodo.5637812
 - Expected Installation time is about 45 minutes, but may vary by system conditions.
  
 ### 3. Instructions for demo
