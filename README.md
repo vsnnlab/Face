@@ -24,9 +24,9 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 4. Expected output for demo
 - Below results for untrained AlexNet will be shown.
-  Result 1) Run_Unit: Spontaneous emergence of face-selectivity in untrained networks (Fig.1, Fig.S1-3)
-  Result 2) Run_PFI: Preferred feature images of face-selective units in untrained networks (Fig.2, Fig.S4) 
-  Result 3) Run_SVM: Detection of face images using the response of face units in untrained networks (Fig.3, Fig.S11-12)  
-  Result 4) Run_Trained: Effect of training on face-selectivity in untrained networks (Fig.4) 
-  Result 5) Run_Invariance: Invariant characteristics of face-selective units in untrained networks (Fig.S5) 
-  Result 6) Run_View: Viewpoint invariance of face-selective units in untrained networks (Fig.S8) 
+  - Result 1) Run_Unit: Spontaneous emergence of face-selectivity in untrained networks (Fig.1, Fig.S1-3)
+  - Result 2) Run_PFI: Preferred feature images of face-selective units in untrained networks (Fig.2, Fig.S4) 
+  - Result 3) Run_SVM: Detection of face images using the response of face units in untrained networks (Fig.3, Fig.S11-12)  
+  - Result 4) Run_Trained: Effect of training on face-selectivity in untrained networks (Fig.4) 
+  - Result 5) Run_Invariance: Invariant characteristics of face-selective units in untrained networks (Fig.S5) 
+  - Result 6) Run_View: Viewpoint invariance of face-selective units in untrained networks (Fig.S8) 
