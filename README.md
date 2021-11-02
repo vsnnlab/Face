@@ -14,10 +14,8 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 2. Installation
 - Download all files and folders. ("Clone or download" -> "Download ZIP")
-- Download 'AlexNet_2018b.mat', 'PretrainedNet.zip', 'Stimulus.zip' and unzip files in the same directory
-  - AlexNet_2018b.mat (https://drive.google.com/file/d/1t1eaHaVttd_Y1dDcuph9F8N9s7OwdUvC/view?usp=sharing)
-  - PretrainedNet.zip (https://drive.google.com/file/d/1qBl-2QsOHb1VMd20NYmPm_jWx4i2Cwul/view?usp=sharing)
-  - Stimulus.zip (https://drive.google.com/file/d/16vFQsDF2Cl6nwDuHzR7ZRFIzcQFqnRrd/view?usp=sharing) 
+- Download 'AlexNet_2018b.mat', 'Data.zip', 'Stimulus.zip' from below link and unzip files in the same directory
+  [Data URL] : 
 - Expected Installation time is about 45 minutes, but may vary by system conditions.
  
 ### 3. Instructions for demo
@@ -26,9 +24,9 @@ Seungdae Baek, Min Song, Jaeson Jang, Gwangsu Kim, and Se-Bum Paik*
 
 ### 4. Expected output for demo
 - Below results for untrained AlexNet will be shown.
-  1) Spontaneous emergence of face-selectivity in untrained networks (Figure 1b-g)
-  2) Preferred feature images of face-selective units in untrained networks (Figure 2b,d) 
-  3) Detection of face images using the response of face units in untrained networks (Figure 3b-d) 
-  4) Invariant characteristics of face-selective units in untrained networks  (Figure 4a-f) 
-  5) Invariant characteristics of face-selective units in untrained networks  (Figure 5a,f-h) 
-  6) Effect of training on face-selectivity in untrained networks  (Figure 6b-d) 
+  1) Run_Unit: Spontaneous emergence of face-selectivity in untrained networks (Fig.1, Fig.S1-3)
+  2) Run_PFI: Preferred feature images of face-selective units in untrained networks (Fig.2, Fig.S4) 
+  3) Run_SVM: Detection of face images using the response of face units in untrained networks (Fig.3, Fig.S11-12)  
+  4) Run_Trained: Effect of training on face-selectivity in untrained networks (Fig.4) 
+  5) Run_Invariance: Invariant characteristics of face-selective units in untrained networks (Fig.S5) 
+  6) Run_View: Viewpoint invariance of face-selective units in untrained networks (Fig.S8) 
